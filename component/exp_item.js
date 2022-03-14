@@ -1,27 +1,36 @@
+import SkillBar from "./usedSkillBar.js";
+
 class ExpItems {
     $box;
-    $year_company;
-    $year;
-    $company;
+    $pjContri;
+
+    $pjNameContain;
+    $pjDescContain;
+    $pjSkillContain;
+
+    $pjName;
+    $pjDescript;
     $text;
     $jobTitle;
     $jobDescrip;
-    $link;
-    constructor(year, companyName, jobTitle, descipt) {
+    $pjUrl;
+    $skillUsed;
+    constructor(jobTitle, descipt, url) {
         this.$box = document.createElement("div");
         this.$box.classList.add("box");
 
-        this.$year_company = document.createElement("div");
-        this.$year_company.classList.add("year_company");
+        this.$pjNameContain = document.createElement("div");
+        this.$pjNameContain.classList.add("pjName");
 
-        this.$year = document.createElement("h5");
-        this.$year.innerText = year;
+        this.$pjDescContain = document.createElement("div");
+        this.$pjDescContain.classList.add("pjName")
 
-        this.$company = document.createElement("h5");
-        this.$company.innerText = companyName;
+        this.$pjName = document.createElement("h5");
+        this.$pjName.innerText = "Project:";
+        this.$pjName.id = "h5Name";
 
-        this.$text = document.createElement("div");
-        this.$text.classList.add("text");
+        this.$pjDescript = document.createElement("h5");
+        this.$pjDescript.innerText = "Description:";
 
         this.$jobTitle = document.createElement("h4");
         this.$jobTitle.innerText = jobTitle;
@@ -29,14 +38,20 @@ class ExpItems {
         this.$jobDescrip = document.createElement("p");
         this.$jobDescrip.innerText = descipt;
 
-        // this.$link = document.createElement("a");
-        // this.$link.href = url;
+        this.$pjUrl = document.createElement("a");
+        this.$pjUrl.innerText= "Click me! Please."
+        this.$pjUrl.href = url;
+        this.$pjUrl.target ="_blank";
+
+        this.$jobDescrip.append(this.$pjUrl);
+
+        // this.$pjSkillContain = new SkillBar("26%","46%","28%");
 
     }
     render() {
-        this.$year_company.append(this.$year, this.$company);
-        this.$text.append(this.$jobTitle, this.$jobDescrip);
-        this.$box.append(this.$year_company, this.$text);
+        this.$pjNameContain.append(this.$pjName, this.$jobTitle);
+        this.$pjDescContain.append(this.$pjDescript, this.$jobDescrip);
+        this.$box.append(this.$pjNameContain, this.$pjDescContain);
         return this.$box;
     }
 }

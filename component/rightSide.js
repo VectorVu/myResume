@@ -34,7 +34,6 @@ class rightSide {
 
         this.$experience = new ExpList();
 
-        this.$skillList = new SkillList("skills");
 
         this.$interest = document.createElement("div");
         this.$interest.classList.add("objective", "interest");
@@ -82,7 +81,7 @@ class rightSide {
         );
         this.$interest.append(this.$interestTitle, this.$interestList);
         this.$objective.append(this.$objTitle, this.$objContent);
-        this.$rightContainer.append(this.$objective, this.$experience.render(), this.$skillList.render(), this.$interest);
+        this.$rightContainer.append(this.$objective, this.$experience.render(), this.$interest);
         return this.$rightContainer;
     }
 
