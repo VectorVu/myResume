@@ -6,6 +6,7 @@ class ExpList {
     $title;
     $ZoZ;
     $musicWeb;
+    $pdfOrUrl;
     constructor() {
         this.$container = document.createElement("div");
         this.$container.classList.add("objective");
@@ -26,9 +27,16 @@ class ExpList {
             "This is my current project, a music player website, it has a list of given songs and the user can listen to any song, they can also add any song to their favorites playlist (features in development). This's just a beta and more features will be added in the future. Project detail here: ",
             "https://vectorvu.github.io/RealSound/"
         );
+        this.$pdfOrUrl = new ExpItems
+        (
+            "My Resume",
+            "The official version of this resume is a website. You can view it in its entirety here: ",
+            "https://vectorvu.github.io/myResume/"
+        );
+
     }
     render() {
-        this.$container.append(this.$title, this.$ZoZ.render(), this.$musicWeb.render());
+        this.$container.append(this.$title, this.$ZoZ.render(), this.$musicWeb.render(), this.$pdfOrUrl.render());
         return this.$container;
     }
 }
