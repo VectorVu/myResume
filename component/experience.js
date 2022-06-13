@@ -4,39 +4,35 @@ import ExpItems from "./exp_item.js";
 class ExpList {
     $container;
     $title;
-    $ZoZ;
+    $CountDown;
     $musicWeb;
     $pdfOrUrl;
+    $weSound;
     constructor() {
         this.$container = document.createElement("div");
         this.$container.classList.add("objective");
 
         this.$title = document.createElement("h2");
         this.$title.classList.add("rightTitle");
-        this.$title.innerText = "knowledge & Skills";
+        this.$title.innerText = "Projects";
 
-        this.$ZoZ = new ExpItems
+        this.$weSound = new ExpItems(
+            "we Sound",
+            "We Sound is my latest project. As the name implies, this site allows users to upload their own audio files to share with the world. In addition, We Sound is till being updated with new features for a better user experience. Project detail here: ",
+            "https://we-sound.vercel.app/",
+            "ReactJS, Bootstrap, NodeJS, MongoDB"
+        );
+        this.$CountDown = new ExpItems
         (
             "CountDown",
              "This is a small project of mine as I learn how to build a website with simple features using html, css, and Javascript. This website allows the user to enter a future date and it will display and count down the number of days, hours, minutes, and seconds from the current date to the entered landmark. Project detail here: ",
-             "https://vectorvu.github.io/CountDown/"
+             "https://vectorvu.github.io/CountDown/",
+             "HTML, CSS, JavaScript"
         );
-        this.$musicWeb = new ExpItems
-        (
-            "RealSound",
-            "This is my current project, a music player website, it has a list of given songs and the user can listen to any song, they can also add any song to their favorites playlist (features in development). This's just a beta and more features will be added in the future. Project detail here: ",
-            "https://vectorvu.github.io/RealSound/"
-        );
-        this.$pdfOrUrl = new ExpItems
-        (
-            "My Resume",
-            "The official version of this resume is a website. You can view it in its entirety here: ",
-            "https://vectorvu.github.io/myResume/"
-        );
-
+       
     }
     render() {
-        this.$container.append(this.$title, this.$ZoZ.render(), this.$musicWeb.render(), this.$pdfOrUrl.render());
+        this.$container.append(this.$title, this.$weSound.render(), this.$CountDown.render());
         return this.$container;
     }
 }

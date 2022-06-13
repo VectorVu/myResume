@@ -10,15 +10,10 @@ class skillItems {
         this.$skillName.classList.add("skillName");
         this.$skillName.innerText = name;
 
-        this.$percent = document.createElement("span");
-        this.$percent.classList.add("percent");
-
-        this.$fillPercent = document.createElement("div");
-        this.$fillPercent.style.width = percent;
     }
     render() {
-        this.$percent.append(this.$fillPercent);
-        this.$container.append(this.$skillName, this.$percent);
+      
+        this.$container.append(this.$skillName);
         return this.$container;
     }
 }

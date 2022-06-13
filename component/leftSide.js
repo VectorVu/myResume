@@ -35,7 +35,7 @@ class leftSide {
 
         this.$jobTitle = document.createElement("span");
         this.$jobTitle.classList.add("jobTitle");
-        this.$jobTitle.innerText = "Web Developer";
+        this.$jobTitle.innerText = "Backend intern";
 
         this.$contactInfor = new Infor("contact");
         this.$education = new Infor("edu");

@@ -10,12 +10,13 @@ class ExpItems {
 
     $pjName;
     $pjDescript;
-    $text;
     $jobTitle;
     $jobDescrip;
     $pjUrl;
     $skillUsed;
-    constructor(jobTitle, descipt, url) {
+    $skillName;
+    $detailSkill;
+    constructor(jobTitle, descipt, url, techUse) {
         this.$box = document.createElement("div");
         this.$box.classList.add("box");
 
@@ -23,7 +24,10 @@ class ExpItems {
         this.$pjNameContain.classList.add("pjName");
 
         this.$pjDescContain = document.createElement("div");
-        this.$pjDescContain.classList.add("pjName")
+        this.$pjDescContain.classList.add("pjName");
+
+        this.$pjSkillContain = document.createElement("div");
+        this.$pjSkillContain.classList.add("pjName"); 
 
         this.$pjName = document.createElement("h5");
         this.$pjName.innerText = "Project:";
@@ -31,6 +35,12 @@ class ExpItems {
 
         this.$pjDescript = document.createElement("h5");
         this.$pjDescript.innerText = "Description:";
+
+        this.$skillName = document.createElement("h5");
+        this.$skillName.innerText = "Technology:";
+
+        this.$detailSkill = document.createElement("p");
+        this.$detailSkill.innerText = techUse;
 
         this.$jobTitle = document.createElement("h4");
         this.$jobTitle.innerText = jobTitle;
@@ -45,13 +55,14 @@ class ExpItems {
 
         this.$jobDescrip.append(this.$pjUrl);
 
-        // this.$pjSkillContain = new SkillBar("26%","46%","28%");
+        
 
     }
     render() {
         this.$pjNameContain.append(this.$pjName, this.$jobTitle);
         this.$pjDescContain.append(this.$pjDescript, this.$jobDescrip);
-        this.$box.append(this.$pjNameContain, this.$pjDescContain);
+        this.$pjSkillContain.append(this.$skillName, this.$detailSkill);
+        this.$box.append(this.$pjNameContain, this.$pjDescContain, this.$pjSkillContain);
         return this.$box;
     }
 }
