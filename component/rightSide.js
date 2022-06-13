@@ -41,7 +41,7 @@ class rightSide {
             [
                 "Programming languages: JavaScript, C/C++, Java",
                 "Frameworks/Platforms: Bootstrap, NodeJS, ReactJS, WebAPI",
-                "Tools: Visual Studio Code, Apache NetBeans, SQL Server, NoSQLBooter, PostMan",
+                "Tools: Visual Studio Code, Apache NetBeans, SQL Server, NoSQLBooter, Postman",
                 "Version control: Git, GitHub"
             ],
             "h2");
