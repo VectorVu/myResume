@@ -5,10 +5,7 @@ class SkillList {
     $title;
     $listSkills;
 
-    //items
-    $english;
-    $vietnamese;
-
+    $items;
     // code language
     $cpp;
     $html;
@@ -16,25 +13,35 @@ class SkillList {
     $js;
     $sql;
 
-    constructor() {
+    constructor(title, list, h2) {
         this.$container = document.createElement("div");
 
         this.$listSkills = document.createElement("ul");
-   
-            this.$container.classList.add("contact");
 
-            this.$title = document.createElement("h3");
-            this.$title.classList.add("title");
-
-            this.$title.innerText = "Languages";
-            this.$container.classList.add("lang");
-
-            this.$english = new skillItems("English", "50%");
-            this.$vietnamese = new skillItems("Vietnamese", "95%");
         
+        if (h2) {
+            this.$title = document.createElement("h2");
+            this.$title.classList.add("rightTitle");
+            this.$container.classList.add("rightList");
+        }
+        else {
+             this.$title = document.createElement("h3");
+             this.$title.classList.add("title");
+             this.$container.classList.add("contact");
+             }
+        
+
+        this.$title.innerText = title;
+        this.$container.classList.add("lang");
+
+        list.map((item)=> {
+            this.$items = new skillItems(item, h2);
+            this.$listSkills.append(this.$items.render());  
+        })
+       
+
     }
     render() {
-        this.$listSkills.append(this.$english.render(), this.$vietnamese.render());
         this.$container.append(this.$title, this.$listSkills);
         return this.$container;
     }

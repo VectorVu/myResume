@@ -10,7 +10,7 @@ class Infor {
     $email;
     $birthday;
     $address;
-
+    $github;
     //education
 
     $uni1;
@@ -55,11 +55,19 @@ class Infor {
                 ],
                 type
             );
+            this.$github = new InforItems(
+                [
+                    `<i class="fa fa-github" aria-hidden="true"></i>`,
+                    `<a href="https://github.com/VectorVu" style="text-decoration: none; color:#fff" target="_blank">https://github.com/VectorVu</a>`
+                ],
+                type
+            )
             this.$listInfor.append(
                 this.$birthday.render(),
                 this.$phone.render(),
                 this.$email.render(),
-                this.$address.render()
+                this.$address.render(),
+                this.$github.render()
             );
         }
         else if (type === "edu") {

@@ -8,7 +8,8 @@ class rightSide {
     $objTitle;
     $objContent;
     $experience;
-    $skillList;
+    $rightSkillList;
+    $skillTitle;
     // interest
     $interest;
     $interestList;
@@ -33,6 +34,17 @@ class rightSide {
         this.$objContent.innerText = "Learn more professional skills and practical experience. From That, I can participate and contribute to the company's projects."
 
         this.$experience = new ExpList();
+
+
+        this.$rightSkillList = new SkillList(
+            "Skills",
+            [
+                "Programming languages: JavaScript, C/C++, Java",
+                "Frameworks/Platforms: Bootstrap, NodeJS, ReactJS, WebAPI",
+                "Tools: Visual Studio Code, Apache NetBeans, SQL Server, NoSQLBooter, PostMan",
+                "Version control: Git, GitHub"
+            ],
+            "h2");
 
 
         this.$interest = document.createElement("div");
@@ -81,7 +93,7 @@ class rightSide {
         );
         this.$interest.append(this.$interestTitle, this.$interestList);
         this.$objective.append(this.$objTitle, this.$objContent);
-        this.$rightContainer.append(this.$objective, this.$experience.render(), this.$interest);
+        this.$rightContainer.append(this.$objective, this.$rightSkillList.render(), this.$experience.render(), this.$interest);
         return this.$rightContainer;
     }
 

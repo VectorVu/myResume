@@ -17,7 +17,7 @@ class InforItems {
 
             this.$text = document.createElement("span");
             this.$text.classList.add("text");
-            this.$text.innerText = inforArray[1];
+            this.$text.innerHTML = inforArray[1];
             this.$container.append(this.$iconContain, this.$text);
         }
         else if (type === "edu") {

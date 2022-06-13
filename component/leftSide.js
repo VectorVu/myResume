@@ -39,7 +39,7 @@ class leftSide {
 
         this.$contactInfor = new Infor("contact");
         this.$education = new Infor("edu");
-        this.$language = new SkillList("lang");
+        this.$language = new SkillList("Languages", ["English", "Vietnamese"]);
     }
     render() {
         this.$imageContainer.append(this.$ava);

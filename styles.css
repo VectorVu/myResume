@@ -113,6 +113,17 @@ body::-webkit-scrollbar-thumb {
      position: relative;
      margin: 10px 0;
 }
+.rightList{
+    margin-bottom: 50px;
+}
+.rightList ul li{
+    position: relative;
+    margin: 10px 0;
+
+}
+.rightList ul{ 
+     margin: 10px 0 10px 70px;
+}
 .icon{
     display: inline-block;
     width: 30px;
@@ -156,6 +167,10 @@ body::-webkit-scrollbar-thumb {
 .skillName{
     color: #fff;
     font-weight: 300;
+}
+.skillNameRight{
+    color: #333;
+    font-size: 16px;
 }
 .objective{
     margin-bottom: 50px;
